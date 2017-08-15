@@ -6,14 +6,17 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import { Header } from './components/common';
+import LibraryList from './components/LibraryList';
 
 //creates our store object, holds our state
 
 const App = () => {
   return (
     <Provider store={createStore(reducers)}>
-      <Header headerText/>
-      <View />
+      <View>
+        <Header headerText="Tech Stack" />
+        <LibraryList />
+      </View>
     </Provider>
   );
 };
