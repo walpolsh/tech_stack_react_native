@@ -2,7 +2,7 @@
 
 export const selectLibrary = (libraryId) => {
   return {
-    type: 'select_library',
+    type: 'select_library', //the command or instruction to our reducer
     payload: libraryId,
   };
 };

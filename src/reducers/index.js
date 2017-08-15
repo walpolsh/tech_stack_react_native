@@ -2,11 +2,11 @@ import { combineReducers } from 'redux';
 import LibraryReducer from './LibraryReducer';
 import SelectionReducer from './SelectionReducer';
 
-//one reducer one file
+//here we combine reducers into one export
 
 export default combineReducers({
-  libraries: LibraryReducer,
-  selectedLibraryId: SelectionReducer,
+  libraries: LibraryReducer, //LibraryReducer assigned to specific key
+  selectedLibraryId: SelectionReducer, //key defines how our app's state looks
 });
 
 //when our app first boots up it evaluates this statement

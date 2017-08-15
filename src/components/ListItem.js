@@ -56,10 +56,16 @@ const styles = {
   },
 };
 
+//mapStateToProps allows us to connect our app level state to the component level
+//
+
 const mapStateToProps = (state, ownProps) => { //ownProps = this.props
+  //when called mapStateToProps will rerun pass a new set of props to our component
+  //when an action creator is called our app wii re-render
+
   const expanded = state.selectedLibraryId === ownProps.library.id;
 
-  return { expanded };
+  return { expanded };// pass in a new set of props to our component
 };
 
 export default connect(mapStateToProps, actions)(ListItem);
