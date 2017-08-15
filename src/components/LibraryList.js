@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
+import { ListView } from 'react-native';
 import { connect } from 'react-redux';
+import ListItem from './ListItem';
 
+//this component is ment to show a list of data
 class LibraryList extends Component {
+  componentWillMount() {
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2,
+    });
+
+    this.dataSource = ds.cloneWithRows(this.props.libraries);
+  };
+
+  renderRow(library) {
+    return <ListItem library={library}/>;
+  };
+
+  //^first arguement is the item we wish to render.
+  //the names of props are completely up to us... library makes sense
+
   render() {
-    console.log(this.props)
-    return;
+    return (
+      <ListView
+        dataSource={this.dataSource}
+        renderRow={this.renderRow}
+      />
+    );
   }
 }
 
