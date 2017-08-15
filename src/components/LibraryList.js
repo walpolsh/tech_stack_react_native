@@ -46,4 +46,4 @@ export default connect(mapStateToProps)(LibraryList);
 //why not connect(LibraryList, ..... ?)
 //redux isnt scary, or hard its just filled with lots of confusing terms
 //in effect connect is providing a link from our LibraryList to our app state
-//it connects our app's state to the LibraryList
+//it connects our app's state to the
